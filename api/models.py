@@ -22,12 +22,13 @@ class SuperHero(db.Model):
 
     def serialize(self):
         return {
+            'id': self.id,
             'superhero_alias': self.superhero_alias, 
             'email_address': self.email_address,
             'first_name': self.first_name,
             'last_name': self.last_name,
-            'started_on': self.started_on,
-            'finished_on': self.finished_on,
+            'started_on': self.started_on.strftime('%Y-%m-%d'),
+            'finished_on': self.finished_on.strftime('%Y-%m-%d') if self.finished_on else None,
             'income': str(self.income),
             'status': self.status.status,
         }
