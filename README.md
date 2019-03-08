@@ -25,3 +25,21 @@ This tool uses `flask_migrate` (a wrapper around Alembic) for data management. A
 python manage.py db upgrade
 ```
 
+## Get, create, and search heroes
+
+Use the following endpoints to interact with the data trust API.
+
+```
+# get all heroes
+curl http://127.0.0.1:5000/heroes
+```
+
+```
+# add a new hero
+curl -X POST -H "Content-Type: application/json" -d '{"email_address": "wonder@woman.us", "first_name": "Wonder", "last_name": "Woman", "income": "95000.99", "status": "Graduated", "superhero_alias": "Wonder Woman"}' http://127.0.0.1:5000/heroes
+```
+
+```
+# query heroes (example)
+curl http://127.0.0.1:5000/heroes?status='Active'&started_after=2000-01-01
+```
