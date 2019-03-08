@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Integer, String, DateTime, Numeric, Column, ForeignKey
 
-db = SQLAlchemy()
+from .app import db
 
 class SuperHero(db.Model):
     __tablename__ = 'superhero'
@@ -19,6 +19,18 @@ class SuperHero(db.Model):
 
     def __repr__(self):
         return '<SuperHeroModel %r>' % self.superhero_alias
+
+    def serialize(self):
+        return {
+            'superhero_alias': self.superhero_alias, 
+            'email_address': self.email_address,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'started_on': self.started_on,
+            'finished_on': self.finished_on,
+            'income': str(self.income),
+            'status': self.status.status,
+        }
 
 class Status(db.Model):
     __tablename__ = 'status'
