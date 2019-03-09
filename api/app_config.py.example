@@ -6,4 +6,8 @@ POSTGRES = {
     'port': '5432',
 }
 
-DB_CONN = 'postgresql+psycopg2://{user}:{pw}@{host}:{port}/{db}'.format(**POSTGRES)
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{user}:{pw}@{host}:{port}/{db}'.format(**POSTGRES)
+
+DEBUG = True
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
