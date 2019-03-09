@@ -1,6 +1,6 @@
 # Trust in Superheroes
 
-This simple Flask API contains endpoints for viewing, creating, and filtering Super Heroes. 
+This simple Flask API contains endpoints for viewing, creating, and filtering super heroes affiliated with the prestigious Super Hero University. 
 
 ## Get started
 
@@ -69,7 +69,7 @@ Run the tests, and note the 404 error:
 pytest
 ```
 
-I did not effectively debug it – in the interest of time. However, I did write very sparse notes about the types of test assertions I would (will?) make, once I can determine the issue described above (see `tests/test_app.py`).
+I did not debug it – in the interest of time. However, I did write very sparse notes about the types of test assertions I would (will?) make, once I can determine the issue described above (see `tests/test_app.py`).
 
 #### Docker
 Docker remains a mystery to me. I had some success following this [precise, step-by-step tutorial](https://medium.freecodecamp.org/docker-development-workflow-a-guide-with-flask-and-postgres-db1a1843044a). But like the tests, the dockerized app returns an incessant 404. 
