@@ -1,0 +1,17 @@
+version: '3'
+services:
+  api:
+    image: reginafcompton/trust-in-superheroes:1.0.0
+    build: .
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:11.2
+    environment:
+      - POSTGRES_USER=superhero_user
+      - POSTGRES_PASSWORD=1qaz2wsx3edc
+      - POSTGRES_DB=superheroes
+    ports:
+        - 5432:5432
