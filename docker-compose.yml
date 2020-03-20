@@ -1,7 +1,7 @@
 version: '3'
 services:
   api:
-    image: reginafcompton/trust-in-superheroes:1.0.0
+    image: trust-in-superheroes:1.0.0
     build: .
     ports:
       - 8000:8000
